@@ -1,6 +1,7 @@
 # iris-lib
 
 [![build](https://github.com/Kaesebrot84/iris-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/Kaesebrot84/iris-lib/actions/workflows/ci.yml)
+[![crates.io](https://img.shields.io/crates/v/iris-lib.svg)](https://crates.io/crates/iris-lib)
 
 Generate color palettes from pixels or images using the [mediancut algorithm](https://en.wikipedia.org/wiki/Median_cut).
 

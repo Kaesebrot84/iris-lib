@@ -2,7 +2,7 @@
 name = "iris-lib"
 version = "0.1.0"
 edition = "2021"
-authors = ["Andrej G. <code.andrej@gmail.com>"]
+authors = ["Andrej G."]
 license = "MIT"
 description = "A library that creates color palettes from images using the median cut algorithm."
 readme = "README.md"

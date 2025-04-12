@@ -1,1 +1,1 @@
-pub mod color_bucket;
+pub mod median_cut;

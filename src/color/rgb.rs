@@ -51,8 +51,16 @@ impl Color for RGB {
         format!("#{:02X}{:02X}{:02X}", self.r, self.g, self.b)
     }
 
-    fn from_hex(hex: &str) -> Self {
+    fn from_hex(_hex: &str) -> Self {
         todo!()
+    }
+    
+    fn from_rgb(rgb: RGB) -> Self {
+        rgb
+    }
+    
+    fn from_rgba(rgba: RGBA) -> Self {
+        RGB::from_values(rgba.r, rgba.g, rgba.b)
     }
 }
 

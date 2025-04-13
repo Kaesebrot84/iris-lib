@@ -5,7 +5,7 @@ pub trait Color {
     fn new() -> Self;
     // TODO
     fn to_hex(&self) -> String;
-    
+
     // TODO
     fn from_hex(hex: &str) -> Self;
     // TODO

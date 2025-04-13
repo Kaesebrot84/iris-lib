@@ -14,22 +14,13 @@ pub struct RGBA {
 
 impl RGBA {
     pub fn from_values(r: u8, g: u8, b: u8, a: u8) -> Self {
-        RGBA {
-            r: r,
-            g: g,
-            b: b,
-            a,
-        }
+        RGBA { r: r, g: g, b: b, a }
     }
 }
 
 impl fmt::Display for RGBA {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(
-            f,
-            "{{ R: {}, G: {}, B: {}, A: {} }}",
-            self.r, self.g, self.b, self.a
-        )
+        write!(f, "{{ R: {}, G: {}, B: {}, A: {} }}", self.r, self.g, self.b, self.a)
     }
 }
 
@@ -75,19 +66,13 @@ impl From<RGB> for RGBA {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn rgba_index_ut() {
-        let color = RGBA {
-            r: 1,
-            g: 2,
-            b: 3,
-            a: 4,
-        };
+        let color = RGBA { r: 1, g: 2, b: 3, a: 4 };
         assert_eq!(1, color[RGBAChannel::R]);
         assert_eq!(2, color[RGBAChannel::G]);
         assert_eq!(3, color[RGBAChannel::B]);

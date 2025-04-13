@@ -1,4 +1,3 @@
-
 use crate::palette::Palette;
 
 pub trait MedianCut {

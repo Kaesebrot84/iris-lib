@@ -54,11 +54,11 @@ impl Color for RGB {
     fn from_hex(_hex: &str) -> Self {
         todo!()
     }
-    
+
     fn from_rgb(rgb: RGB) -> Self {
         rgb
     }
-    
+
     fn from_rgba(rgba: RGBA) -> Self {
         RGB::from_values(rgba.r, rgba.g, rgba.b)
     }
@@ -66,11 +66,7 @@ impl Color for RGB {
 
 impl Default for RGB {
     fn default() -> Self {
-        Self {
-            r: Default::default(),
-            g: Default::default(),
-            b: Default::default(),
-        }
+        Self { r: Default::default(), g: Default::default(), b: Default::default() }
     }
 }
 

@@ -4,7 +4,7 @@ use super::{Color, RGBA};
 
 /// Represents a color, holding red, green, blue values as `u8` each.
 ///
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Default)]
 pub struct RGB {
     pub r: u8,
     pub g: u8,
@@ -64,18 +64,12 @@ impl Color for RGB {
     }
 }
 
-impl Default for RGB {
-    fn default() -> Self {
-        Self { r: Default::default(), g: Default::default(), b: Default::default() }
-    }
-}
-
 /// Indexing implementation for the `RGB` struct using `RGBChannel` as index.
 ///
 /// # Examples
 ///
 /// ```
-/// use iris_lib::color::{RGB, RGBChannel};
+/// use iris_lib::colors::{RGB, RGBChannel};
 ///
 /// let color = RGB { r: 1, g: 2, b: 3 };
 /// assert_eq!(1, color[RGBChannel::R]);

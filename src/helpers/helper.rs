@@ -1,4 +1,4 @@
-use crate::color::RGBA;
+use crate::colors::RGBA;
 
 pub fn generate_unsorted_colors() -> Vec<RGBA> {
     vec![

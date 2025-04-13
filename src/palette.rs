@@ -1,5 +1,5 @@
 use crate::{
-    color::{RGBAChannel, RGBA},
+    colors::{RGBAChannel, RGBA},
     utils::mean,
 };
 
@@ -11,7 +11,7 @@ use image::GenericImageView;
 /// Struct holding an `Vec<RGBA>`.
 /// Implements helpful functions for the median cut algorithm.
 ///
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Default)]
 pub struct Palette {
     pub(crate) colors: Vec<RGBA>,
 }
@@ -30,7 +30,7 @@ impl Palette {
     /// # Examples
     ///
     /// ```
-    /// use iris_lib::color::RGBA;
+    /// use iris_lib::colors::RGBA;
     /// use iris_lib::palette::Palette;
     ///
     /// let data = vec![RGBA { r: 15, g: 131, b: 0, a: 255 }, RGBA { r: 221, g: 11, b: 22, a: 130 }, RGBA { r: 81, g: 11, b: 16, a: 0 }];
@@ -96,7 +96,6 @@ impl Palette {
     }
 
     // Returns the mean RGBA value based on own colors.
-    ///
     pub fn color_mean(&self) -> RGBA {
         let r = mean(self.colors.iter().map(|c| c.r));
         let g = mean(self.colors.iter().map(|c| c.g));
@@ -193,7 +192,7 @@ impl Palette {
 #[cfg(test)]
 mod tests {
     use crate::{
-        color::{RGBAChannel, RGBA},
+        colors::{RGBAChannel, RGBA},
         helpers::generate_unsorted_colors,
         palette::Palette,
     };

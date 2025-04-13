@@ -14,7 +14,7 @@ pub struct RGBA {
 
 impl RGBA {
     pub fn from_values(r: u8, g: u8, b: u8, a: u8) -> Self {
-        RGBA { r: r, g: g, b: b, a }
+        RGBA { r, g, b, a }
     }
 }
 
@@ -29,7 +29,7 @@ impl fmt::Display for RGBA {
 /// # Examples
 ///
 /// ```
-/// use iris_lib::color::{RGBA, RGBAChannel};
+/// use iris_lib::colors::{RGBA, RGBAChannel};
 ///
 /// let color = RGBA { r: 1, g: 2, b: 3, a: 4 };
 /// assert_eq!(1, color[RGBAChannel::R]);

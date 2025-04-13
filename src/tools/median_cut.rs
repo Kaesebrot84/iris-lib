@@ -18,8 +18,8 @@ impl MedianCut for Palette {
     ///
     /// ```
     /// use iris_lib::palette::Palette;
-    /// use iris_lib::color::RGBA;
-    /// use crate::iris_lib::median_cut::median_cut::MedianCut; // TODO: Better import would be Palette::Mediancut
+    /// use iris_lib::colors::RGBA;
+    /// use crate::iris_lib::tools::median_cut::MedianCut; // TODO: Better import would be Palette::Mediancut
     ///
     /// let data = vec![RGBA { r: 15, g: 131, b: 0, a: 255 }, RGBA { r: 221, g: 11, b: 22, a: 130 }, RGBA { r: 81, g: 11, b: 16, a: 0 }];
     /// let mut bucket = Palette::from_pixels(data.clone());
@@ -78,7 +78,7 @@ impl MedianCut for Palette {
 
 #[cfg(test)]
 mod tests {
-    use crate::{color::RGBA, helpers::generate_unsorted_colors};
+    use crate::{colors::RGBA, helpers::generate_unsorted_colors};
 
     use super::*;
 

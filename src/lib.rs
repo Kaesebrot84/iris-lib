@@ -1,5 +1,5 @@
-pub mod color;
+pub mod colors;
 pub mod helpers;
-pub mod median_cut;
 pub mod palette;
+pub mod tools;
 pub mod utils;

@@ -1,20 +1,32 @@
 use super::{RGB, RGBA};
 
 pub trait Color {
-    // TODO
+    /// Create new `Color`
+    ///
     fn new() -> Self;
-    // TODO
+
+    /// Generate a hex color `String`.
     fn to_hex(&self) -> String;
 
-    // TODO
+    /// Create a `Color` from a hex `String`
+    ///
     fn from_hex(hex: &str) -> Self;
-    // TODO
+
+    /// Create a `Color` from `RGB` values
+    ///
     fn from_rgb(rgb: RGB) -> Self;
-    // TODO
+
+    /// Create a `Color` from `RGBA` values
+    ///
     fn from_rgba(rgba: RGBA) -> Self;
 
     // Utils
 
-    // TODO
+    /// Returns a random `Color`.
+    ///
+    fn random() -> Self;
+
+    /// Returns a `Color` value comlementary to own value.
+    ///
     fn complementary(&self) -> Self;
 }

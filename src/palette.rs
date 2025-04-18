@@ -157,7 +157,7 @@ impl Palette {
         self.colors[index][channel]
     }
 
-    /// Calculate the mean value for a specific RGBA channel on own vector of `RGBA`.
+    /// Calculate the mean value for a specific `RGBAChannel` on palette.
     ///
     /// # Arguments
     ///
@@ -168,22 +168,26 @@ impl Palette {
         mean(self.colors.iter().map(|x| x[channel]))
     }
 
-    // TODO: Docs
+    /// Returns `true` if there are no colors in the palette, otherwise `false`.
+    ///
     pub fn is_empty(&self) -> bool {
         self.colors.is_empty()
     }
 
-    // TODO: Docs
+    /// Return the amount of colors currently in the palette.
+    ///
     pub fn len(&self) -> usize {
         self.colors.len()
     }
 
-    // TODO: Docs
+    /// Returns a `Vec` holding colors currently in the palette.
+    ///
     pub fn colors(&self) -> Vec<RGBA> {
         self.colors.clone()
     }
 
-    // TODO: Add docs
+    /// Appends a `RGBA` color to the palette.
+    ///
     pub fn push_rgba(&mut self, rgba: RGBA) {
         self.colors.push(rgba);
     }

@@ -12,6 +12,7 @@ keywords = ["cli", "image", "color", "quantization"]
 categories = ["algorithms"]
 
 [dependencies]
+rand = { version = "0.9.1", features = ["thread_rng"]}
 image = { version = "0.25.6", optional = true }
 
 [features]

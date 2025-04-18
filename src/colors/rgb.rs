@@ -13,13 +13,13 @@ pub struct RGB {
 
 impl RGB {
     pub fn from_values(r: u8, g: u8, b: u8) -> Self {
-        RGB { r, g, b }
+        Self { r, g, b }
     }
 }
 
 impl From<RGBA> for RGB {
     fn from(rgba: RGBA) -> Self {
-        RGB::from_values(rgba.r, rgba.g, rgba.b)
+        Self::from_values(rgba.r, rgba.g, rgba.b)
     }
 }
 
@@ -60,7 +60,11 @@ impl Color for RGB {
     }
 
     fn from_rgba(rgba: RGBA) -> Self {
-        RGB::from_values(rgba.r, rgba.g, rgba.b)
+        Self::from_values(rgba.r, rgba.g, rgba.b)
+    }
+
+    fn random() -> Self {
+        Self::from_values(rand::random::<u8>(), rand::random::<u8>(), rand::random::<u8>())
     }
 }
 
@@ -94,10 +98,10 @@ mod tests {
 
     #[test]
     fn rgb_index_ut() {
-        let rgb = RGB { r: 1, g: 2, b: 3 };
-        assert_eq!(1, rgb[RGBChannel::R]);
-        assert_eq!(2, rgb[RGBChannel::G]);
-        assert_eq!(3, rgb[RGBChannel::B]);
+        let rgb = RGB::random();
+        assert_eq!(rgb.r, rgb[RGBChannel::R]);
+        assert_eq!(rgb.g, rgb[RGBChannel::G]);
+        assert_eq!(rgb.b, rgb[RGBChannel::B]);
     }
 
     #[test]

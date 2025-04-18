@@ -82,4 +82,3 @@ Check out [iris](https://github.com/Kaesebrot84/iris) the command line tool buil
 
 ## TODO
 * Impl Default for colors
-* Rename ColorBucket to Palette and extract from median_cut

@@ -1,5 +1,5 @@
 use crate::{
-    colors::{RGBAChannel, RGBA},
+    colors::{Color, RGBAChannel, RGBA},
     utils::mean,
 };
 
@@ -19,6 +19,11 @@ pub struct Palette {
 impl Palette {
     pub fn new() -> Self {
         Palette { colors: vec![] }
+    }
+
+    /// TODO: Test & docs
+    pub fn random(color_count: u32) -> Self {
+        Self::from_pixels((0..color_count).map(|_| RGBA::random()).collect())
     }
 
     /// Creates a `ColorBucket` based on the colors passed. Returns `None` if passed an empty vector.

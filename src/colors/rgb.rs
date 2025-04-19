@@ -43,10 +43,6 @@ impl Color for RGB {
         Self::default()
     }
 
-    fn complementary(&self) -> Self {
-        Self::from_values(255 - self.r, 255 - self.g, 255 - self.b)
-    }
-
     fn to_hex(&self) -> String {
         format!("#{:02X}{:02X}{:02X}", self.r, self.g, self.b)
     }
@@ -55,16 +51,12 @@ impl Color for RGB {
         todo!()
     }
 
-    fn from_rgb(rgb: RGB) -> Self {
-        rgb
-    }
-
-    fn from_rgba(rgba: RGBA) -> Self {
-        Self::from_values(rgba.r, rgba.g, rgba.b)
-    }
-
     fn random() -> Self {
         Self::from_values(rand::random::<u8>(), rand::random::<u8>(), rand::random::<u8>())
+    }
+
+    fn complementary(&self) -> Self {
+        Self::from_values(255 - self.r, 255 - self.g, 255 - self.b)
     }
 }
 

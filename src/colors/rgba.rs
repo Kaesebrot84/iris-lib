@@ -18,6 +18,13 @@ impl RGBA {
     }
 }
 
+impl From<RGB> for RGBA {
+    // TODO: Tests
+    fn from(rgba: RGB) -> Self {
+        Self::from_values(rgba.r, rgba.g, rgba.b, 255)
+    }
+}
+
 impl fmt::Display for RGBA {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{{ R: {}, G: {}, B: {}, A: {} }}", self.r, self.g, self.b, self.a)
@@ -42,14 +49,6 @@ impl Color for RGBA {
 
     fn from_hex(_hex: &str) -> Self {
         todo!()
-    }
-
-    fn from_rgb(rgb: RGB) -> Self {
-        Self::from_values(rgb.r, rgb.g, rgb.b, 255)
-    }
-
-    fn from_rgba(rgba: RGBA) -> Self {
-        rgba
     }
 
     // TODO: Tests
@@ -101,12 +100,6 @@ pub enum RGBAChannel {
     A,
 }
 
-impl From<RGB> for RGBA {
-    fn from(rgb: RGB) -> Self {
-        RGBA::from_values(rgb.r, rgb.g, rgb.b, 255)
-    }
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -128,22 +121,5 @@ mod tests {
     #[test]
     fn rgba_new_ut() {
         assert_eq!(RGBA::new(), RGBA::default());
-    }
-
-    #[test]
-    fn rgba_from_rgb_ut() {
-        let rgb = RGB::random();
-        let rgba = RGBA::from_rgb(rgb);
-
-        assert_eq!(rgba.r, rgb.r);
-        assert_eq!(rgba.g, rgb.g);
-        assert_eq!(rgba.b, rgb.b);
-        assert_eq!(rgba.a, 255);
-    }
-
-    #[test]
-    fn rgba_from_rgba_ut() {
-        let rgba = RGBA::random();
-        assert_eq!(rgba, RGBA::from_rgba(rgba));
     }
 }
